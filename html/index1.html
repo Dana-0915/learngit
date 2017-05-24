@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet"href="../css/sass.css" type="text/css" />
+	<script src="template.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+	
+	<body>
+		<div id="con1">
+			<ul class="list">
+				<li>热门商品</li>
+				<li>新品登录</li>
+				<li>超值专区</li>				
+			</ul>
+			<div id="content1"></div>
+		</div>
+		
+		
+		<script id="tabs" type="text/html">
+				<div class="cons">
+						{{each lists as value}}
+							<div class="list1">
+								<ul>
+								{{each value.imgsrc as item}}
+									<li><img src={{item}}></li>
+								{{/each}}
+								</ul>
+							</div>
+						{{/each}}
+				</div>
+				</script>			
+						
+		<script type="text/javascript">
+			$(function(){
+				$.get("data1.json",function(data){					
+					var data = data;
+					
+					var html = template("tabs",data);
+					document.getElementById("content1").innerHTML=html;
+					$(".list li").on("mouseover",function(){
+						$(this).css({"background":"#20252a"}).siblings().css({"background":"#353a40"});
+					var index=$(this).index();
+						$(".list1").eq(index).show().siblings().hide();				
+					})	
+					
+				})	
+		})
+			
+	</script>
+	</body>
+</html>
