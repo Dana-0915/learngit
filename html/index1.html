@@ -36,8 +36,7 @@
 		<script type="text/javascript">
 			$(function(){
 				$.get("data1.json",function(data){					
-					var data = data;
-					
+					var data = data;					
 					var html = template("tabs",data);
 					document.getElementById("content1").innerHTML=html;
 					$(".list li").on("mouseover",function(){
