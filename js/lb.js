@@ -15,12 +15,34 @@ $(function(){
 			$(".biao li").eq(index).addClass("active").siblings().removeClass("active");
 		}
 	},3000)
-	
-	
-})
+		
+});
 
 $(function(){
-				$.get("data1.json",function(data){					
+				$.get("../json/data2.json",function(data){					
+					var data = data;
+					console.log(data)		
+					var html_1 = template("pics",data);
+					var html_2 = template("pics",data);
+					document.getElementById("article3_div_ul").innerHTML=html_1;					
+					document.getElementById("aside3_div_ul").innerHTML=html_2;
+				
+				})
+});
+
+$(function(){
+				$.get("../json/data2.json",function(data){					
+					var data = data;
+					console.log(data)		
+					var html_2 = template("picss",data);					
+					document.getElementById("aside3_div_ul").innerHTML=html_2;
+				
+				})
+});
+
+
+$(function(){
+				$.get("../json/data1.json",function(data){					
 					var data = data;					
 					var html = template("tabs",data);
 					document.getElementById("content1").innerHTML=html;
@@ -31,4 +53,12 @@ $(function(){
 					})	
 					
 				})	
-		})
+});
+$(function(){
+	var oCon_aside=document.getElementsByClassName("con_aside")[0];	
+	var aLi=oCon_aside.getElementsByTagName("li");	
+	for(var i=0;i<aLi.length;i++){
+		aLi[i].style.backgroundPositionY=-i*48+'px';
+	}
+		
+});

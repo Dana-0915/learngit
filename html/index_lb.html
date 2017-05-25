@@ -4,8 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>		
 		<link rel="stylesheet"href="../css/index_lb.css" />
-		<link rel="stylesheet" href="../css/style.css" />
-		
+		<link rel="stylesheet" href="../css/style.css" />		
 		<script src="../js/jquery-1.11.0.js"></script>
 		<script src="template.js" type="text/javascript" charset="utf-8"></script>
 		<script src="../js/lb.js"></script>
@@ -13,7 +12,7 @@
 	</head>
 	<body>
 		<menu>
-			<section>
+			<section class="section_1">
 				<aside></aside>
 				<article class="lb">
 					<ul class="con">
@@ -36,41 +35,121 @@
 			</section>
 			
 			
-			<section>
-				<aside>
-					<ul class="con">
-									
+			<section class="section_2">
+				<aside class="s_aside">
+					<ul class="con_aside">
+							<p>游戏类型</p>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>
+							<li><a href=""></a></li>					
 					</ul>
 					
 				</aside>
 				
 				<article>
 					<div id="con1">
+						<ul>
+							<li><a href=""><img src="../img/253.jpg"></a></li>
+							<li><a href=""><img src="../img/254.jpg"></a></li>
+							<li><a href=""><img src="../img/255.jpg"></a></li>
+							<li><a href=""><img src="../img/256.jpg"></a></li>
+							
+						</ul>
+						
+					</div>
+					<div id="con2">
 						<ul class="list">
-							<li>热门商品</li>
-							<li>新品登录</li>
-							<li>超值专区</li>				
+							<li><span>&#xe67a;</span>热门商品</li>
+							<li><span>&#xe618;</span>新品登录</li>
+							<li><span>&#xe627;</span>超值专区</li>				
 						</ul>
 						<div id="content1"></div>
 					</div>
 					<script id="tabs" type="text/html">
-					<div class="cons">
-							{{each lists as value}}
-								<div class="list1">
-									<ul>
-									{{each value.imgsrc as item}}
-										<li><img src={{item}}></li>
-									{{/each}}
-									</ul>
-								</div>
-							{{/each}}
-					</div>
+						<div class="cons">
+								{{each lists as value}}
+									<div class="list1">
+										<ul>
+										{{each value.imgsrc as item}}
+											<li><img src={{item}}></li>
+										{{/each}}
+										</ul>
+									</div>
+								{{/each}}
+						</div>
 				</script>	
 					
 				</article>
 				
 			</section>
 			
+			
+			<section class="section_3">
+				<aside class="aside3">
+					<p class="pp">本月热门排行版</p>
+					<div id="aside3_div_2">
+						<ul id="aside3_div_ul"></ul>
+<!--					<div class="iconx top_1"></div>-->
+					</div>
+					
+					<!--<ul class="con_aside3">							
+							<li>
+								<a href="">
+									<img src="../img/236.jpg" />
+									<div class="aside3_div">
+										<p class="ppp">第十届暴雪嘉年华纪念礼品</p>
+										</br>
+										<span class="spsp"><b>超值价</b>　￥9　<del>￥12</del></span>
+									<div>								
+								</a>
+							</li>											-->
+					</ul>
+					
+				</aside>
+				
+				<article class="article_3">
+					<div id="article_3_div_1">
+						<p class="pp"><a href="#">生活用品<span>更多&gt;&gt;&gt;</span></a></p>						
+						<div id="article3_div_2"><ul id="article3_div_ul"></ul></div>
+					</div>						
+				</article>		
+			</section>
+			
 		</menu>
+		<script id="pics" type="text/html">
+						
+			{{each img1 as value}}					
+				<li>
+					<a href="">
+						<img src={{value.imgs[0]}}/>
+						<div class="article3_div_3">
+							<p class="ppp">{{value.imgs[1]}}</p>
+							<span class="spsp"><b>超值价</b>{{value.imgs[2]}}　<del class="delate">{{value.imgs[3]}}</del></span>
+						<div>								
+					</a>											
+				</li>
+		    {{/each}}
+								
+						
+		</script>
+		<script id="picss" type="text/html">
+						
+			{{each img1 as value}}					
+				<li>
+					<a href="">
+						<img src={{value.imgs[0]}}/>
+						<div class="aside3_div_3">
+							<p class="ppp">{{value.imgs[1]}}</p>
+							<span class="spsp"><b>超值价</b>{{value.imgs[2]}}　<del class="delate">{{value.imgs[3]}}</del></span>
+						<div>								
+					</a>											
+				</li>
+		    {{/each}}
+								
+						
+		</script>
 	</body>
 </html>

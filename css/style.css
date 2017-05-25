@@ -202,7 +202,8 @@ nav {
       background: #03558d; }
 
 footer {
-  height: 580px;
-  background: #000; }
+  height: 484px;
+  background: #000;
+  margin-top: 80px; }
 
 /*# sourceMappingURL=style.css.map */
